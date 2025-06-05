@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, BookOpen, Heart, Star, Users } from 'lucide-react';
+import { ArrowRight, Award, BookOpen, Heart, Star, Users, Moon, Sun, Sparkles, Compass, Clock, Eye } from 'lucide-react';
 
 const About = () => {
   const credentials = [
@@ -31,13 +31,66 @@ const About = () => {
     }
   ];
 
+  const astrologyServices = [
+    {
+      icon: Sun,
+      title: "Natal Chart Analysis",
+      description: "Understanding your birth chart reveals your personality, strengths, challenges, and life purpose through planetary positions at birth."
+    },
+    {
+      icon: Moon,
+      title: "Lunar Guidance",
+      description: "Working with moon phases and lunar cycles to optimize timing for important decisions and personal growth."
+    },
+    {
+      icon: Sparkles,
+      title: "Transit Readings",
+      description: "Current planetary movements and how they affect your personal chart, revealing opportunities and challenges ahead."
+    },
+    {
+      icon: Compass,
+      title: "Relationship Compatibility",
+      description: "Synastry and composite chart analysis to understand relationship dynamics and compatibility between partners."
+    },
+    {
+      icon: Clock,
+      title: "Timing & Predictions",
+      description: "Using progressions and transits to identify the best timing for major life decisions and upcoming influences."
+    },
+    {
+      icon: Eye,
+      title: "Spiritual Guidance",
+      description: "Connecting with your higher self through astrological insights to support your spiritual journey and awakening."
+    }
+  ];
+
+  const astrologyFacts = [
+    {
+      title: "Ancient Wisdom",
+      description: "Astrology is one of humanity's oldest sciences, practiced for over 4,000 years across civilizations from Babylon to India to Greece."
+    },
+    {
+      title: "Planetary Influence",
+      description: "Each planet in our solar system represents different aspects of human experience - from communication (Mercury) to love (Venus) to transformation (Pluto)."
+    },
+    {
+      title: "Zodiac Signs",
+      description: "The 12 zodiac signs represent archetypal energies that influence personality traits, motivations, and life patterns based on your birth date."
+    },
+    {
+      title: "Houses & Aspects",
+      description: "Your birth chart is divided into 12 houses representing life areas, while planetary aspects reveal how cosmic energies interact in your life."
+    }
+  ];
+
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-accent/10 relative overflow-hidden">
+        <div className="absolute inset-0 stars-bg opacity-20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fade-in">
               <h1 className="font-serif text-5xl font-bold text-gradient mb-6">
                 About Me
               </h1>
@@ -47,17 +100,17 @@ const About = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 My path to astrology began during a personal spiritual awakening 15 years ago. Since then, I've devoted my life to studying the ancient art of astrology and helping others discover the profound insights hidden within their birth charts.
               </p>
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="hover-scale">
                 <Link to="/contact">
                   Book a Reading <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center overflow-hidden">
+            <div className="relative animate-scale-in">
+              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center overflow-hidden hover-scale">
                 <img 
-                  src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" 
-                  alt="Mystical landscape" 
+                  src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb" 
+                  alt="Mystical starry night sky" 
                   className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full"></div>
@@ -67,26 +120,101 @@ const About = () => {
         </div>
       </section>
 
+      {/* What is Astrology Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="font-serif text-4xl font-bold text-gradient mb-6">Understanding Astrology</h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+              Astrology is the ancient practice of studying celestial movements and their influence on human affairs and natural phenomena. 
+              It's a symbolic language that connects us to the cosmos and provides profound insights into our personalities, relationships, and life paths.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {astrologyFacts.map((fact, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 border-primary/20 hover-scale animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                <CardContent className="p-6">
+                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <Sparkles className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="font-semibold mb-3 text-lg">{fact.title}</h3>
+                  <p className="text-sm text-muted-foreground">{fact.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Astrology Services Overview */}
+      <section className="py-20 bg-card relative">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" 
+            alt="Mountain landscape" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="font-serif text-4xl font-bold text-gradient mb-6">How Astrology Can Guide You</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Through various astrological techniques and interpretations, I help you understand the cosmic influences 
+              shaping your life and provide guidance for making empowered decisions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {astrologyServices.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-primary/20 hover-scale animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <service.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
+                      <p className="text-muted-foreground text-sm">{service.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* My Story */}
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-4xl font-bold text-gradient text-center mb-16">My Journey</h2>
+          <h2 className="font-serif text-4xl font-bold text-gradient text-center mb-16 animate-fade-in">My Journey</h2>
           
-          <div className="space-y-8 text-lg text-muted-foreground">
+          <div className="space-y-8 text-lg text-muted-foreground animate-fade-in">
             <p>
-              My journey into astrology wasn't planned—it was written in the stars. During a challenging period in my early twenties, I discovered my birth chart and was amazed by how accurately it described my personality, challenges, and potential. That moment sparked a lifelong passion for understanding the cosmic influences that shape our lives.
+              My journey into astrology wasn't planned—it was written in the stars. During a challenging period in my early twenties, 
+              I discovered my birth chart and was amazed by how accurately it described my personality, challenges, and potential. 
+              That moment sparked a lifelong passion for understanding the cosmic influences that shape our lives.
             </p>
             
             <p>
-              I spent years studying under renowned astrologers, earning certifications in both Western and Vedic astrology. I've also trained in complementary modalities including tarot reading, numerology, and crystal healing to provide the most comprehensive guidance possible.
+              I spent years studying under renowned astrologers, earning certifications in both Western and Vedic astrology. 
+              The ancient wisdom of these traditions fascinated me - how the positions of planets at the moment of birth could 
+              reveal so much about a person's character, life purpose, and destiny. I've also trained in complementary modalities 
+              including tarot reading, numerology, and crystal healing to provide the most comprehensive guidance possible.
             </p>
             
             <p>
-              What sets my practice apart is my belief that astrology isn't about predicting a fixed future—it's about understanding your cosmic blueprint and using that knowledge to make empowered choices. Every reading I give is focused on helping you step into your power and align with your highest path.
+              What sets my practice apart is my belief that astrology isn't about predicting a fixed future—it's about understanding 
+              your cosmic blueprint and using that knowledge to make empowered choices. The planets don't control us; they simply 
+              reflect the energies and opportunities available to us at any given time. Every reading I give is focused on helping 
+              you step into your power and align with your highest path.
             </p>
             
             <p>
-              Today, I'm honored to have guided thousands of individuals through major life transitions, helping them find love, choose careers, heal relationships, and discover their life purpose. My work has been featured in several wellness publications, and I regularly speak at spiritual conferences and workshops.
+              Today, I'm honored to have guided thousands of individuals through major life transitions, helping them find love, 
+              choose careers, heal relationships, and discover their life purpose. My work has been featured in several wellness 
+              publications, and I regularly speak at spiritual conferences and workshops about the transformative power of astrology.
             </p>
           </div>
         </div>
@@ -95,11 +223,11 @@ const About = () => {
       {/* Credentials */}
       <section className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-4xl font-bold text-gradient text-center mb-16">Credentials & Experience</h2>
+          <h2 className="font-serif text-4xl font-bold text-gradient text-center mb-16 animate-fade-in">Credentials & Experience</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {credentials.map((credential, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 border-primary/20">
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 border-primary/20 hover-scale animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardContent className="p-6">
                   <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                     <credential.icon className="h-8 w-8 text-primary" />
@@ -114,18 +242,27 @@ const About = () => {
       </section>
 
       {/* My Approach */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section className="py-20 bg-background relative">
+        <div className="absolute right-0 top-1/4 w-1/3 h-1/2 opacity-10">
+          <img 
+            src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
+            alt="Deer in nature" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-serif text-4xl font-bold text-gradient mb-4">My Approach</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              I believe in creating a safe, non-judgmental space where you can explore your deepest questions and receive guidance that honors your unique journey.
+              I believe in creating a safe, non-judgmental space where you can explore your deepest questions and 
+              receive guidance that honors your unique journey. My readings combine ancient wisdom with practical insights 
+              for modern living.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-primary/20">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-primary/20 hover-scale animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -144,15 +281,17 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 cosmic-gradient text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <section className="py-20 cosmic-gradient text-white relative overflow-hidden">
+        <div className="absolute inset-0 stars-bg opacity-30"></div>
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10 animate-fade-in">
           <h2 className="font-serif text-4xl font-bold mb-6">
             Ready to Begin Your Journey?
           </h2>
           <p className="text-xl mb-8 text-gray-200">
-            I'd be honored to be your guide as you explore the wisdom of your stars and step into your cosmic potential.
+            I'd be honored to be your guide as you explore the wisdom of your stars and step into your cosmic potential. 
+            Let the ancient wisdom of astrology illuminate your path forward.
           </p>
-          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-black">
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-black hover-scale">
             <Link to="/services">
               Explore My Services <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
