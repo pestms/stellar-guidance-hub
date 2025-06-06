@@ -1,35 +1,49 @@
-
-import { Stars, Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Stars, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Stars className="h-6 w-6 text-primary" />
-              <span className="font-serif text-xl font-bold text-gradient">Celestial Guidance</span>
+              <span className="font-serif text-xl font-bold text-gradient">
+                Celestial Guidance
+              </span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Illuminating your path through the wisdom of the stars and ancient astrological traditions.
+              Illuminating your path through the wisdom of the stars and ancient
+              astrological traditions.
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2">
-              <Link to="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link
+                to="/"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 Home
               </Link>
-              <Link to="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link
+                to="/about"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 About Me
               </Link>
-              <Link to="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link
+                to="/services"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 Services
               </Link>
-              <Link to="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link
+                to="/contact"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 Contact
               </Link>
             </div>
@@ -64,7 +78,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
+        <div className="border-t border-border mt-4 pt-4 text-center">
           <p className="text-sm text-muted-foreground">
             © 2024 Celestial Guidance. All rights reserved.
           </p>

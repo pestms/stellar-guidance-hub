@@ -1,18 +1,18 @@
-
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Stars } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Stars } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import logo from "/logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navigationItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About Me', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About Me", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -22,8 +22,17 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <Stars className="h-8 w-8 text-primary" />
-            <span className="font-serif text-2xl font-bold text-gradient">Celestial Guidance</span>
+            <img
+              src={logo}
+              alt="Celestial Guidance Logo"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-full"
+            />
+
+            <span className="font-serif text-2xl font-bold text-gradient">
+              Celestial Guidance
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -34,8 +43,8 @@ const Navigation = () => {
                 to={item.path}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
                   isActive(item.path)
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-muted-foreground hover:text-primary'
+                    ? "text-primary border-b-2 border-primary"
+                    : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {item.name}
@@ -56,7 +65,11 @@ const Navigation = () => {
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -71,8 +84,8 @@ const Navigation = () => {
                   to={item.path}
                   className={`block px-3 py-2 text-base font-medium transition-colors ${
                     isActive(item.path)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-primary hover:bg-muted'
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-primary hover:bg-muted"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

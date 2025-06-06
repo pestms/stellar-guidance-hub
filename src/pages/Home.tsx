@@ -12,7 +12,7 @@ import {
   Target,
   Compass,
 } from "lucide-react";
-import Gemini from "../../public/Gemini.png";
+import Gemini from "/Gemini.png";
 
 const Home = () => {
   const testimonials = [
@@ -85,25 +85,67 @@ const Home = () => {
         <div className="absolute inset-0 cosmic-gradient">
           <div className="absolute inset-0 stars-bg animate-pulse"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20"></div>
-          
+
           {/* Additional Floating Elements */}
           <div className="absolute top-20 left-10 w-2 h-2 bg-accent rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-40 right-20 w-3 h-3 bg-white rounded-full animate-float opacity-40" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute top-80 left-20 w-2 h-2 bg-white rounded-full animate-float opacity-60" style={{ animationDelay: "5s" }}></div>
-          <div className="absolute bottom-40 left-20 w-1 h-1 bg-accent rounded-full animate-float opacity-80" style={{ animationDelay: "2s" }}></div>
-          <div className="absolute bottom-20 right-40 w-2 h-2 bg-white rounded-full animate-float opacity-50" style={{ animationDelay: "3s" }}></div>
-          <div className="absolute top-60 left-1/3 w-1 h-1 bg-accent rounded-full animate-float opacity-70" style={{ animationDelay: "0.5s" }}></div>
-          <div className="absolute top-80 right-1/3 w-3 h-3 bg-white rounded-full animate-float opacity-30" style={{ animationDelay: "1.5s" }}></div>
-          
+          <div
+            className="absolute top-40 right-20 w-3 h-3 bg-white rounded-full animate-float opacity-40"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-80 left-20 w-2 h-2 bg-white rounded-full animate-float opacity-60"
+            style={{ animationDelay: "5s" }}
+          ></div>
+          <div
+            className="absolute bottom-40 left-20 w-1 h-1 bg-accent rounded-full animate-float opacity-80"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute bottom-20 right-40 w-2 h-2 bg-white rounded-full animate-float opacity-50"
+            style={{ animationDelay: "3s" }}
+          ></div>
+          <div
+            className="absolute top-60 left-1/3 w-1 h-1 bg-accent rounded-full animate-float opacity-70"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="absolute top-80 right-1/3 w-3 h-3 bg-white rounded-full animate-float opacity-30"
+            style={{ animationDelay: "1.5s" }}
+          ></div>
+
           {/* New floating elements */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent rounded-full animate-float opacity-50" style={{ animationDelay: "2.5s" }}></div>
-          <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-white rounded-full animate-float opacity-70" style={{ animationDelay: "3.5s" }}></div>
-          <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-accent rounded-full animate-float opacity-40" style={{ animationDelay: "4s" }}></div>
-          <div className="absolute bottom-1/4 right-1/2 w-2 h-2 bg-white rounded-full animate-float opacity-60" style={{ animationDelay: "0.7s" }}></div>
-          <div className="absolute top-1/2 left-10 w-1 h-1 bg-accent rounded-full animate-float opacity-70" style={{ animationDelay: "1.2s" }}></div>
-          <div className="absolute top-2/3 right-10 w-2 h-2 bg-white rounded-full animate-float opacity-50" style={{ animationDelay: "2.7s" }}></div>
-          <div className="absolute bottom-10 left-1/4 w-1 h-1 bg-white rounded-full animate-float opacity-80" style={{ animationDelay: "3.2s" }}></div>
-          <div className="absolute top-10 right-1/3 w-2 h-2 bg-accent rounded-full animate-float opacity-60" style={{ animationDelay: "4.2s" }}></div>
+          <div
+            className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent rounded-full animate-float opacity-50"
+            style={{ animationDelay: "2.5s" }}
+          ></div>
+          <div
+            className="absolute top-1/3 right-1/4 w-1 h-1 bg-white rounded-full animate-float opacity-70"
+            style={{ animationDelay: "3.5s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-accent rounded-full animate-float opacity-40"
+            style={{ animationDelay: "4s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/4 right-1/2 w-2 h-2 bg-white rounded-full animate-float opacity-60"
+            style={{ animationDelay: "0.7s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-10 w-1 h-1 bg-accent rounded-full animate-float opacity-70"
+            style={{ animationDelay: "1.2s" }}
+          ></div>
+          <div
+            className="absolute top-2/3 right-10 w-2 h-2 bg-white rounded-full animate-float opacity-50"
+            style={{ animationDelay: "2.7s" }}
+          ></div>
+          <div
+            className="absolute bottom-10 left-1/4 w-1 h-1 bg-white rounded-full animate-float opacity-80"
+            style={{ animationDelay: "3.2s" }}
+          ></div>
+          <div
+            className="absolute top-10 right-1/3 w-2 h-2 bg-accent rounded-full animate-float opacity-60"
+            style={{ animationDelay: "4.2s" }}
+          ></div>
         </div>
 
         <div className="absolute inset-0 bg-black/30"></div>
@@ -122,7 +164,7 @@ const Home = () => {
             relationships, and life purpose through ancient cosmic wisdom.
           </p>
           <div
-            className="space-x-4 animate-fade-in"
+            className="space-x-4 space-y-4 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
             <Button
@@ -365,17 +407,38 @@ const Home = () => {
         <div className="absolute inset-0 stars-bg opacity-30"></div>
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-2 h-2 bg-accent rounded-full animate-float opacity-60"></div>
-          <div className="absolute bottom-20 right-20 w-3 h-3 bg-white rounded-full animate-float opacity-40" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-accent rounded-full animate-float opacity-80" style={{ animationDelay: "2s" }}></div>
-          
+          <div
+            className="absolute bottom-20 right-20 w-3 h-3 bg-white rounded-full animate-float opacity-40"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-1/4 w-1 h-1 bg-accent rounded-full animate-float opacity-80"
+            style={{ animationDelay: "2s" }}
+          ></div>
+
           {/* New floating elements */}
-          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-float opacity-50" style={{ animationDelay: "1.5s" }}></div>
-          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-accent rounded-full animate-float opacity-70" style={{ animationDelay: "2.5s" }}></div>
-          <div className="absolute top-3/4 right-1/4 w-2 h-2 bg-white rounded-full animate-float opacity-40" style={{ animationDelay: "3s" }}></div>
-          <div className="absolute bottom-10 left-10 w-1 h-1 bg-accent rounded-full animate-float opacity-60" style={{ animationDelay: "0.7s" }}></div>
-          <div className="absolute top-10 right-1/2 w-2 h-2 bg-white rounded-full animate-float opacity-50" style={{ animationDelay: "1.2s" }}></div>
+          <div
+            className="absolute top-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-float opacity-50"
+            style={{ animationDelay: "1.5s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-accent rounded-full animate-float opacity-70"
+            style={{ animationDelay: "2.5s" }}
+          ></div>
+          <div
+            className="absolute top-3/4 right-1/4 w-2 h-2 bg-white rounded-full animate-float opacity-40"
+            style={{ animationDelay: "3s" }}
+          ></div>
+          <div
+            className="absolute bottom-10 left-10 w-1 h-1 bg-accent rounded-full animate-float opacity-60"
+            style={{ animationDelay: "0.7s" }}
+          ></div>
+          <div
+            className="absolute top-10 right-1/2 w-2 h-2 bg-white rounded-full animate-float opacity-50"
+            style={{ animationDelay: "1.2s" }}
+          ></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="font-serif text-4xl font-bold mb-6 animate-fade-in">
             Ready to Discover Your Cosmic Path?
