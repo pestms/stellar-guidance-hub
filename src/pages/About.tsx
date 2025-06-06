@@ -1,8 +1,7 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, BookOpen, Heart, Star, Users, Moon, Sun, Sparkles, Compass, Clock, Eye } from 'lucide-react';
+import { ArrowRight, Award, BookOpen, Heart, Star, Users, Moon, Sun, Sparkles, Compass, Clock, Eye, Coffee, Feather } from 'lucide-react';
 
 const About = () => {
   const credentials = [
@@ -83,8 +82,41 @@ const About = () => {
     }
   ];
 
+  const personalJourney = {
+    title: "My Personal Journey",
+    content: [
+      "Born under a powerful full moon with Jupiter rising, I've always felt a deep connection to the cosmos. My first encounter with astrology came during a transformative period in my life when I was seeking answers about my life purpose.",
+      "A chance meeting with a master astrologer in Sedona revealed talents and life patterns I had never consciously recognized. That profound experience set me on a path of serious astrological study that has spanned over 15 years.",
+      "I've traveled extensively to study with renowned astrologers across the globe - from traditional Vedic techniques in India to evolutionary astrology in the United States. These diverse perspectives have enriched my practice and allow me to offer multidimensional insights to my clients.",
+      "When I'm not exploring the stars, you can find me tending to my garden, practicing meditation, or hiking through nature's wonders. I believe that connecting with the earth is just as important as connecting with the cosmos - both provide essential wisdom for balanced living."
+    ]
+  };
+
+  const dailyPractice = [
+    {
+      icon: Coffee,
+      title: "Morning Rituals",
+      description: "I begin each day by observing the current planetary positions and moon phase, integrating this cosmic awareness into my meditation practice to set intentions aligned with celestial energies."
+    },
+    {
+      icon: BookOpen,
+      title: "Continuous Learning",
+      description: "I dedicate time each week to studying ancient texts and modern astrological developments, ensuring my practice incorporates both timeless wisdom and contemporary insights."
+    },
+    {
+      icon: Heart,
+      title: "Client Preparation",
+      description: "Before each reading, I spend time in contemplative preparation, connecting with the unique energy of your chart to provide the most insightful and compassionate guidance."
+    },
+    {
+      icon: Feather,
+      title: "Integration Work",
+      description: "I regularly practice integrating spiritual and astrological wisdom into practical, grounded actions - a process I guide my clients through as well."
+    }
+  ];
+
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 overflow-x-hidden">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 to-accent/10 relative overflow-hidden">
         <div className="absolute inset-0 stars-bg opacity-20"></div>
@@ -114,6 +146,49 @@ const About = () => {
                   className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New Personal Journey Section */}
+      <section className="py-20 bg-card relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/10 to-accent/10"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-4xl font-bold text-gradient mb-4">{personalJourney.title}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column - Story Content */}
+            <div className="space-y-6 text-lg text-muted-foreground">
+              {personalJourney.content.map((paragraph, index) => (
+                <p key={index} className="leading-relaxed">{paragraph}</p>
+              ))}
+            </div>
+            
+            {/* Right Column - Daily Practice */}
+            <div className="space-y-6">
+              <h3 className="font-serif text-2xl font-semibold mb-6">My Daily Practice</h3>
+              <div className="grid grid-cols-1 gap-6">
+                {dailyPractice.map((practice, index) => (
+                  <Card key={index} className="hover:shadow-md transition-all duration-300 border-primary/20">
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <practice.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-lg mb-2">{practice.title}</h4>
+                          <p className="text-muted-foreground text-sm">{practice.description}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
@@ -280,9 +355,22 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Enhanced with more stars */}
       <section className="py-20 cosmic-gradient text-white relative overflow-hidden">
         <div className="absolute inset-0 stars-bg opacity-30"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-2 h-2 bg-accent rounded-full animate-float opacity-60"></div>
+          <div className="absolute bottom-20 right-20 w-3 h-3 bg-white rounded-full animate-float opacity-40" style={{ animationDelay: "1s" }}></div>
+          <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-accent rounded-full animate-float opacity-80" style={{ animationDelay: "2s" }}></div>
+          
+          {/* New floating elements */}
+          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-float opacity-50" style={{ animationDelay: "1.5s" }}></div>
+          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-accent rounded-full animate-float opacity-70" style={{ animationDelay: "2.5s" }}></div>
+          <div className="absolute top-3/4 right-1/4 w-2 h-2 bg-white rounded-full animate-float opacity-40" style={{ animationDelay: "3s" }}></div>
+          <div className="absolute bottom-10 left-10 w-1 h-1 bg-accent rounded-full animate-float opacity-60" style={{ animationDelay: "0.7s" }}></div>
+          <div className="absolute top-10 right-1/2 w-2 h-2 bg-white rounded-full animate-float opacity-50" style={{ animationDelay: "1.2s" }}></div>
+        </div>
+        
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10 animate-fade-in">
           <h2 className="font-serif text-4xl font-bold mb-6">
             Ready to Begin Your Journey?
