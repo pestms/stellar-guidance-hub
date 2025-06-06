@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import TestimonialCard from '@/components/TestimonialCard';
@@ -47,23 +48,23 @@ const Home = () => {
   const energyInsights = [
     {
       icon: Sparkles,
-      title: "Energy Mapping",
-      description: "Understanding how planetary frequencies interact with your personal energy field"
+      title: "Planetary Influence",
+      description: "How celestial bodies shape your personality and life path"
     },
     {
       icon: Zap,
-      title: "Vibrational Alignment",
-      description: "Aligning your name numerology and living space with your cosmic blueprint"
+      title: "Name Numerology",
+      description: "The hidden power and vibrations within your name"
     },
     {
       icon: Target,
-      title: "Growth Periods",
-      description: "Identifying powerful periods for personal and spiritual growth through your birth chart"
+      title: "Timing & Cycles",
+      description: "Understanding the best moments for major life decisions"
     },
     {
       icon: Compass,
-      title: "Life Navigation",
-      description: "Connecting the dots between all energies influencing your life's direction"
+      title: "Life Direction",
+      description: "Finding clarity and purpose through cosmic guidance"
     }
   ];
 
@@ -106,7 +107,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Understanding Your Energy Section */}
+      {/* Understanding Your Energy Section - Redesigned */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/20 to-accent/20"></div>
@@ -115,25 +116,25 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient mb-8">
-                Understanding Your Energy:
-                <span className="block text-3xl md:text-4xl mt-2">Why Readings Matter</span>
+                Why Energy Readings
+                <span className="block text-3xl md:text-4xl mt-2">Transform Lives</span>
               </h2>
               
               <div className="space-y-6 text-lg text-gray-700">
                 <p className="leading-relaxed">
-                  We are constantly surrounded by energy—whether we realize it or not. The planets above, the numbers in our name, even the address we live in—all carry frequencies that interact with us in unique ways.
+                  Every person carries unique energetic frequencies that influence their life path. These invisible forces shape our relationships, career choices, and personal growth opportunities.
                 </p>
                 
                 <p className="leading-relaxed">
-                  Your birth chart might reveal a strong period for growth, yet your name or house number could be carrying conflicting energy that creates resistance...
+                  Your birth chart reveals the cosmic blueprint of your soul's journey, while numerology uncovers the hidden meanings in your name and important dates. Together, they provide profound insights into your true nature.
                 </p>
                 
                 <p className="leading-relaxed">
-                  This is why I don't rely on just one method. By combining astrology, numerology, and in some cases, horary astrology...
+                  By understanding these energetic patterns, you can make aligned decisions, recognize optimal timing for major changes, and tap into your highest potential.
                 </p>
                 
                 <p className="leading-relaxed font-medium text-primary">
-                  Whether you're planning a new chapter or just trying to make sense of the one you're in, these readings help connect the dots between the energies influencing your life.
+                  Whether seeking clarity in love, career direction, or spiritual growth, these ancient wisdom traditions offer practical guidance for modern life challenges.
                 </p>
               </div>
 
@@ -151,12 +152,24 @@ const Home = () => {
             <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
                 <img 
-                  src="/lovable-uploads/032f465b-cc07-48b1-bac7-e1b9515e500c.png" 
-                  alt="Astrological birth chart with cosmic energy mapping" 
-                  className="w-full h-auto object-cover"
+                  src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb" 
+                  alt="Beautiful starry night sky representing cosmic energy and celestial wisdom" 
+                  className="w-full h-auto object-cover aspect-square"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent/10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-accent/20"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-purple-900/20"></div>
+                
+                {/* Overlay Content */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white p-6">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                      <h3 className="font-serif text-2xl font-bold mb-3">Cosmic Wisdom</h3>
+                      <p className="text-sm opacity-90">
+                        Ancient knowledge meets modern insights to guide your journey
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               {/* Floating decorative elements */}
