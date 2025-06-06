@@ -1,9 +1,8 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Moon, Sun, Stars } from 'lucide-react';
+import { ArrowRight, Moon, Sun, Stars, Sparkles, Zap, Target, Compass } from 'lucide-react';
 
 const Home = () => {
   const testimonials = [
@@ -45,28 +44,126 @@ const Home = () => {
     }
   ];
 
+  const energyInsights = [
+    {
+      icon: Sparkles,
+      title: "Energy Mapping",
+      description: "Understanding how planetary frequencies interact with your personal energy field"
+    },
+    {
+      icon: Zap,
+      title: "Vibrational Alignment",
+      description: "Aligning your name numerology and living space with your cosmic blueprint"
+    },
+    {
+      icon: Target,
+      title: "Growth Periods",
+      description: "Identifying powerful periods for personal and spiritual growth through your birth chart"
+    },
+    {
+      icon: Compass,
+      title: "Life Navigation",
+      description: "Connecting the dots between all energies influencing your life's direction"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center cosmic-gradient stars-bg">
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* Enhanced Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 cosmic-gradient">
+          <div className="absolute inset-0 stars-bg animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20"></div>
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-10 w-2 h-2 bg-accent rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-40 right-20 w-3 h-3 bg-white rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-40 left-20 w-1 h-1 bg-accent rounded-full animate-float opacity-80" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 right-40 w-2 h-2 bg-white rounded-full animate-float opacity-50" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-60 left-1/3 w-1 h-1 bg-accent rounded-full animate-float opacity-70" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-80 right-1/3 w-3 h-3 bg-white rounded-full animate-float opacity-30" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+        
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             Unlock the Mysteries
-            <span className="block text-accent">of Your Stars</span>
+            <span className="block text-accent animate-pulse">of Your Stars</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Professional astrology readings to illuminate your path, relationships, and life purpose through ancient cosmic wisdom.
           </p>
           <div className="space-x-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-black">
+            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <Link to="/services">
                 Explore Services <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" asChild className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold transition-all duration-300 hover:scale-105">
               <Link to="/about">Learn More</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Understanding Your Energy Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/20 to-accent/20"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="animate-fade-in">
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient mb-8">
+                Understanding Your Energy:
+                <span className="block text-3xl md:text-4xl mt-2">Why Readings Matter</span>
+              </h2>
+              
+              <div className="space-y-6 text-lg text-gray-700">
+                <p className="leading-relaxed">
+                  We are constantly surrounded by energy—whether we realize it or not. The planets above, the numbers in our name, even the address we live in—all carry frequencies that interact with us in unique ways.
+                </p>
+                
+                <p className="leading-relaxed">
+                  Your birth chart might reveal a strong period for growth, yet your name or house number could be carrying conflicting energy that creates resistance...
+                </p>
+                
+                <p className="leading-relaxed">
+                  This is why I don't rely on just one method. By combining astrology, numerology, and in some cases, horary astrology...
+                </p>
+                
+                <p className="leading-relaxed font-medium text-primary">
+                  Whether you're planning a new chapter or just trying to make sense of the one you're in, these readings help connect the dots between the energies influencing your life.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                {energyInsights.map((insight, index) => (
+                  <div key={index} className="p-4 bg-white/70 rounded-lg border border-primary/10 hover:shadow-md transition-all duration-300 animate-fade-in hover:scale-105" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <insight.icon className="h-8 w-8 text-primary mb-2" />
+                    <h3 className="font-semibold text-gray-800 mb-1">{insight.title}</h3>
+                    <p className="text-sm text-gray-600">{insight.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+                <img 
+                  src="/lovable-uploads/032f465b-cc07-48b1-bac7-e1b9515e500c.png" 
+                  alt="Astrological birth chart with cosmic energy mapping" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent/10"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-purple-900/20"></div>
+              </div>
+              
+              {/* Floating decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-float opacity-80"></div>
+              <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-primary rounded-full animate-float opacity-60" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 -left-3 w-4 h-4 bg-white rounded-full animate-float opacity-70" style={{ animationDelay: '2s' }}></div>
+            </div>
           </div>
         </div>
       </section>
@@ -159,16 +256,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 cosmic-gradient text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-4xl font-bold mb-6">
+      {/* Enhanced CTA Section */}
+      <section className="py-20 cosmic-gradient text-white relative overflow-hidden">
+        <div className="absolute inset-0 stars-bg opacity-30"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-2 h-2 bg-accent rounded-full animate-float opacity-60"></div>
+          <div className="absolute bottom-20 right-20 w-3 h-3 bg-white rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-accent rounded-full animate-float opacity-80" style={{ animationDelay: '2s' }}></div>
+        </div>
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="font-serif text-4xl font-bold mb-6 animate-fade-in">
             Ready to Discover Your Cosmic Path?
           </h2>
-          <p className="text-xl mb-8 text-gray-200">
+          <p className="text-xl mb-8 text-gray-200 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Book your personalized astrology reading today and begin your journey of self-discovery and cosmic alignment.
           </p>
-          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-black">
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Link to="/contact">
               Book Your Reading Now <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
