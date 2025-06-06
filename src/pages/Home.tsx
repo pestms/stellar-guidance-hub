@@ -107,19 +107,23 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Understanding Your Energy Section - Redesigned */}
+      {/* Understanding Your Energy Section - Redesigned with centered title and better layout */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/20 to-accent/20"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Centered Title */}
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient mb-2">
+              Why Energy Readings
+            </h2>
+            <h3 className="font-serif text-3xl md:text-4xl text-gradient">Transform Lives</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Main Text */}
             <div className="animate-fade-in">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient mb-8">
-                Why Energy Readings
-                <span className="block text-3xl md:text-4xl mt-2">Transform Lives</span>
-              </h2>
-              
               <div className="space-y-6 text-lg text-gray-700">
                 <p className="leading-relaxed">
                   Every person carries unique energetic frequencies that influence their life path. These invisible forces shape our relationships, career choices, and personal growth opportunities.
@@ -137,24 +141,15 @@ const Home = () => {
                   Whether seeking clarity in love, career direction, or spiritual growth, these ancient wisdom traditions offer practical guidance for modern life challenges.
                 </p>
               </div>
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                {energyInsights.map((insight, index) => (
-                  <div key={index} className="p-4 bg-white/70 rounded-lg border border-primary/10 hover:shadow-md transition-all duration-300 animate-fade-in hover:scale-105" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <insight.icon className="h-8 w-8 text-primary mb-2" />
-                    <h3 className="font-semibold text-gray-800 mb-1">{insight.title}</h3>
-                    <p className="text-sm text-gray-600">{insight.description}</p>
-                  </div>
-                ))}
-              </div>
             </div>
             
-            <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+            {/* Right Column - Image */}
+            <div className="relative animate-fade-in order-first lg:order-last" style={{ animationDelay: '0.3s' }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 aspect-[4/3]">
                 <img 
-                  src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb" 
-                  alt="Beautiful starry night sky representing cosmic energy and celestial wisdom" 
-                  className="w-full h-auto object-cover aspect-square"
+                  src="https://images.unsplash.com/photo-1502481851512-e93e25c9ba7f" 
+                  alt="Cosmic energy visualization representing celestial wisdom" 
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-accent/20"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-purple-900/20"></div>
@@ -177,6 +172,17 @@ const Home = () => {
               <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-primary rounded-full animate-float opacity-60" style={{ animationDelay: '1s' }}></div>
               <div className="absolute top-1/2 -left-3 w-4 h-4 bg-white rounded-full animate-float opacity-70" style={{ animationDelay: '2s' }}></div>
             </div>
+          </div>
+          
+          {/* Energy Insights Cards - Arranged in 2x2 Grid */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {energyInsights.map((insight, index) => (
+              <div key={index} className="p-5 bg-white/70 rounded-lg border border-primary/10 hover:shadow-md transition-all duration-300 animate-fade-in hover:scale-105" style={{ animationDelay: `${index * 0.1}s` }}>
+                <insight.icon className="h-10 w-10 text-primary mb-3" />
+                <h3 className="font-semibold text-lg text-gray-800 mb-2">{insight.title}</h3>
+                <p className="text-gray-600">{insight.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
